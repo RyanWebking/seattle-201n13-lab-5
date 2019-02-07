@@ -28,6 +28,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var multiply = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + multiply + '.';
+
   return [multiply, message];
 }
 
@@ -71,7 +72,7 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
   var string = '';
   var results = 0;
-  for( var i = 0; i < testArray.length; i++) {
+  for( var i = 0; i < sumArr.length; i++) {
     results = sum(results, sumArr[i])[0];
     if (i === 0){
       string = string + sumArr[i];
@@ -86,7 +87,7 @@ function sumArray(sumArr) { //eslint-disable-line
 
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -99,11 +100,23 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var myString = 'The numbers ';
+  var results = 1;
+  for(var i = 0; i < multArr.length; i++) {
+    results = multiply(results, multArr[i])[0];
+    if (i === 0){
+      myString = myString + multArr[i];
+    } else {
+      myString = myString + ',' + multArr[i];
+    }
+  }
+  myString = myString + ' have a product of ' + results + '.';
 
+  return [results,myString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
